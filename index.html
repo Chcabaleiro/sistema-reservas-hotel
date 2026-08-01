@@ -1,0 +1,1068 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Las Gaviotas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header id="barra-principal" class="barra-superior" hidden>
+    <a class="marca-hotel" href="#inicio" aria-label="Hotel Las Gaviotas">
+      <img class="logo-gaviota logo-gaviota-encabezado" src="img/logo-gaviota.png" alt="">
+      <span>LAS GAVIOTAS<small>HOTEL</small></span>
+    </a>
+    <button class="boton-menu" type="button" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <nav class="navegacion-principal" aria-label="Navegación principal">
+      <a id="enlace-inicio" href="#inicio">
+        <img class="icono-navegacion" src="img/icono-nav-inicio.svg" alt="">
+        <span>Inicio</span>
+      </a>
+      <a href="#habitaciones">
+        <img class="icono-navegacion" src="img/icono-nav-habitaciones.svg" alt="">
+        <span>Habitaciones</span>
+      </a>
+      <a href="#servicios">
+        <img class="icono-navegacion" src="img/icono-nav-servicios.svg" alt="">
+        <span>Servicios</span>
+      </a>
+      <a id="enlace-reservar" href="#reserva">
+        <img class="icono-navegacion" src="img/icono-nav-reservar.svg" alt="">
+        <span>Reservar</span>
+      </a>
+      <a href="#opiniones">
+        <img class="icono-navegacion" src="img/icono-nav-opiniones.svg" alt="">
+        <span>Opiniones</span>
+      </a>
+      <a href="#galeria">
+        <img class="icono-navegacion" src="img/icono-nav-galeria.svg" alt="">
+        <span>Galería</span>
+      </a>
+      <a href="#contacto">
+        <img class="icono-navegacion" src="img/icono-nav-contacto.svg" alt="">
+        <span>Contacto</span>
+      </a>
+      <a id="enlace-panel" href="#panel">
+        <img class="icono-navegacion" src="img/icono-nav-panel.svg" alt="">
+        <span>Listado de reservas</span>
+      </a>
+    </nav>
+
+    <div id="cuenta-usuario" class="cuenta" hidden>
+      <span class="imagen-usuario">
+        <img src="img/icono-nav-usuario.svg" alt="">
+      </span>
+      <span id="nombre-usuario">Usuario</span>
+      <button id="boton-cerrar-sesion" type="button">
+        <img class="icono-navegacion" src="img/icono-nav-salir.svg" alt="">
+        <span>Cerrar sesión</span>
+      </button>
+    </div>
+
+    <div id="acciones-invitado" class="acciones-invitado">
+      <a href="#login">Iniciar sesión</a>
+      <a class="registro-invitado" href="#registro">Crear cuenta</a>
+    </div>
+  </header>
+
+  <main id="vista-inicio-sesion" class="inicio-sesion-principal vista-aplicacion" hidden>
+    <section class="contenedor-inicio-sesion">
+      <div class="bienvenida-inicio-sesion">
+        <div class="aves-inicio-sesion" aria-hidden="true">⌁　⌁　⌁</div>
+        <div class="contenido-bienvenida-inicio-sesion">
+          <span class="logo-pequeno-inicio-sesion">
+            <img class="logo-gaviota" src="img/logo-gaviota.png" alt="">
+            LAS GAVIOTAS HOTEL
+          </span>
+          <h1>Bienvenido/a a<br><strong>Las Gaviotas</strong></h1>
+          <p>Tu lugar de descanso frente al mar</p>
+          <div class="beneficios-inicio-sesion">
+            <span>
+              <img src="img/icono-atencion.svg" alt="">
+              <small>Atención<br>personalizada</small>
+            </span>
+            <span>
+              <img src="img/icono-calendario.svg" alt="">
+              <small>Reservas<br>seguras</small>
+            </span>
+            <span>
+              <img src="img/icono-escudo.svg" alt="">
+              <small>Experiencia<br>confiable</small>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <form id="formulario-inicio-sesion" class="formulario-inicio-sesion-estilo" novalidate>
+        <a class="volver-inicio-sesion" href="#inicio">← Volver como invitado</a>
+        <div class="marca-formulario-inicio-sesion">
+          <img class="logo-gaviota logo-gaviota-inicio-sesion" src="img/logo-gaviota.png" alt="">
+          <strong>LAS GAVIOTAS<small>HOTEL</small></strong>
+        </div>
+        <h2>Iniciar sesión</h2>
+        <p>Ingresá tus credenciales para acceder al sistema</p>
+
+        <label>
+          Correo electrónico
+          <span class="entrada-inicio-sesion">
+            <i><img src="img/icono-correo-login.svg" alt=""></i>
+            <input id="txtCorreoIngreso" name="correoIngreso" type="email" placeholder="ejemplo@lasgaviotas.com">
+          </span>
+        </label>
+
+        <label>
+          Contraseña
+          <span class="entrada-inicio-sesion">
+            <i><img src="img/icono-contrasenia-login.svg" alt=""></i>
+            <input id="txtContraseniaIngreso" name="contraseniaIngreso" type="password" placeholder="••••••••">
+            <button id="boton-ver-contrasenia" type="button" aria-label="Mostrar contraseña">◉</button>
+          </span>
+        </label>
+
+        <p id="error-inicio-sesion" class="error-inicio-sesion" role="alert" hidden>
+          Correo o contraseña incorrectos.
+        </p>
+        <p id="mensaje-registro-exitoso" class="exito-registro" hidden>
+          Cuenta creada correctamente. Ya podés iniciar sesión.
+        </p>
+        <button class="enviar-inicio-sesion" type="submit">Iniciar sesión</button>
+
+        <div class="separador-inicio-sesion"><span>o</span></div>
+        <a class="enlace-crear-cuenta" href="#registro">♙ Crear cuenta nueva</a>
+      </form>
+    </section>
+  </main>
+
+  <main id="vista-registro" class="registro-principal vista-aplicacion" hidden>
+    <section class="contenedor-registro">
+      <div class="bienvenida-registro">
+        <div class="contenido-bienvenida-registro">
+          <span class="logo-pequeno-inicio-sesion">
+            <img class="logo-gaviota" src="img/logo-gaviota.png" alt="">
+            LAS GAVIOTAS HOTEL
+          </span>
+          <h1>Crea tu cuenta<br><strong>y comienza a disfrutar<br>de una experiencia única</strong></h1>
+          <div class="beneficios-inicio-sesion">
+            <span>
+              <img src="img/icono-usuario.svg" alt="">
+              <small>Reservas<br>personalizadas</small>
+            </span>
+            <span>
+              <img src="img/icono-escudo.svg" alt="">
+              <small>Información<br>segura</small>
+            </span>
+            <span>
+              <img src="img/icono-atencion.svg" alt="">
+              <small>Atención<br>prioritaria</small>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <form id="formulario-registro" class="formulario-registro-estilo" novalidate>
+        <a class="volver-inicio-sesion" href="#login">← Volver al inicio de sesión</a>
+        <div class="marca-formulario-inicio-sesion">
+          <img class="logo-gaviota logo-gaviota-inicio-sesion" src="img/logo-gaviota.png" alt="">
+          <strong>LAS GAVIOTAS<small>HOTEL</small></strong>
+        </div>
+        <h2>Crear cuenta</h2>
+        <p>Completá tus datos para registrarte</p>
+
+        <div class="grilla-registro">
+          <label>Nombre
+            <input id="txtNombreRegistro" name="nombreRegistro" type="text" placeholder="Ej.: Juan">
+          </label>
+          <label>Apellido
+            <input id="txtApellidoRegistro" name="apellidoRegistro" type="text" placeholder="Ej.: Pérez">
+          </label>
+          <label class="campo-completo">Correo electrónico
+            <input id="txtCorreoRegistro" name="correoRegistro" type="email" placeholder="Ej.: juan.perez@correo.com">
+          </label>
+          <label>Teléfono
+            <input id="txtCelularRegistro" name="celularRegistro" type="tel" placeholder="Ej.: 099 123 456">
+          </label>
+          <label>Fecha de nacimiento
+            <input id="txtFechaNacimientoRegistro" name="fechaNacimientoRegistro" type="date">
+          </label>
+          <label>Contraseña
+            <input id="txtContraseniaRegistro" name="contraseniaRegistro" type="password" placeholder="Mínimo 4 caracteres">
+          </label>
+          <label>Confirmar contraseña
+            <input id="txtConfirmacionRegistro" name="confirmacionRegistro" type="password" placeholder="Repetí tu contraseña">
+          </label>
+        </div>
+
+        <p class="proteccion-registro">
+          ♢ Tu información será utilizada únicamente para gestionar tu experiencia en el hotel.
+        </p>
+        <label class="aceptar-terminos">
+          <input id="chkTerminosRegistro" name="terminosRegistro" type="checkbox">
+          Acepto los términos y condiciones.
+        </label>
+        <p id="error-registro" class="error-inicio-sesion" role="alert" hidden></p>
+        <button class="enviar-inicio-sesion" type="submit">Crear cuenta</button>
+        <a class="enlace-crear-cuenta" href="#login">♙ Ya tengo una cuenta</a>
+      </form>
+    </section>
+  </main>
+
+  <main id="vista-inicio" class="inicio-principal vista-aplicacion">
+    <section class="portada-inicio">
+      <div class="contenido-portada-inicio">
+        <span class="texto-superior-inicio">HOTEL LAS GAVIOTAS</span>
+        <h1>Tu lugar de descanso<br>frente al mar</h1>
+        <p>
+          Confort, naturaleza y atención personalizada para disfrutar
+          una estadía inolvidable en Punta del Este.
+        </p>
+        <div class="acciones-inicio">
+          <a class="boton-principal-inicio" href="#habitaciones">Ver habitaciones</a>
+          <a class="boton-secundario-inicio" href="#reserva">Reservar ahora</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="seccion-inicio resumen-servicios-inicio">
+      <div class="encabezado-seccion-inicio">
+        <span>SERVICIOS DESTACADOS</span>
+        <h2>Todo lo que necesitás para descansar</h2>
+        <p>Comodidades pensadas para acompañarte durante toda tu estadía.</p>
+      </div>
+
+      <div class="grilla-servicios-inicio">
+        <article>
+          <img src="img/icono-desayuno.svg" alt="">
+          <h3>Desayuno</h3>
+          <p>Opciones frescas y variadas.</p>
+        </article>
+        <article>
+          <img src="img/icono-piscina.svg" alt="">
+          <h3>Piscina</h3>
+          <p>Un espacio tranquilo con vista al mar.</p>
+        </article>
+        <article>
+          <img src="img/icono-estacionamiento.svg" alt="">
+          <h3>Estacionamiento</h3>
+          <p>Privado y seguro para huéspedes.</p>
+        </article>
+      </div>
+      <a class="enlace-inicio" href="#servicios">Conocer todos los servicios →</a>
+    </section>
+
+    <section class="seccion-inicio resumen-habitaciones-inicio">
+      <div class="encabezado-seccion-inicio">
+        <span>DESCANSÁ FRENTE AL MAR</span>
+        <h2>Habitaciones destacadas</h2>
+        <p>Elegí el espacio que mejor se adapte a tu estadía.</p>
+      </div>
+
+      <div class="grilla-habitaciones-inicio">
+        <article>
+          <img src="img/habitacion-premium.png" alt="Habitación Premium">
+          <div>
+            <span>Habitación superior</span>
+            <h3>Premium</h3>
+            <p>Mayor espacio y confort con detalles que marcan la diferencia.</p>
+            <strong>USD 110 por noche</strong>
+          </div>
+        </article>
+        <article>
+          <img src="img/habitacion-luxury.png" alt="Habitación Luxury">
+          <div>
+            <span>Habitación deluxe</span>
+            <h3>Luxury</h3>
+            <p>Lujo y confort en cada detalle para una experiencia inolvidable.</p>
+            <strong>USD 121 por noche</strong>
+          </div>
+        </article>
+      </div>
+      <a class="enlace-inicio" href="#habitaciones">Ver todas las habitaciones →</a>
+    </section>
+
+    <section class="seccion-inicio resumen-galeria-inicio">
+      <div class="encabezado-seccion-inicio">
+        <span>CONOCÉ EL HOTEL</span>
+        <h2>Un vistazo a Las Gaviotas</h2>
+      </div>
+      <div class="grilla-galeria-inicio">
+        <img src="img/galeria-habitacion.png" alt="Habitación con vista al mar">
+        <img src="img/galeria-piscina.png" alt="Piscina del hotel">
+        <img src="img/galeria-terraza.png" alt="Terraza frente al mar">
+      </div>
+      <a class="enlace-inicio" href="#galeria">Ver galería completa →</a>
+    </section>
+
+    <section class="seccion-inicio resumen-opiniones-inicio">
+      <div class="encabezado-seccion-inicio">
+        <span>EXPERIENCIAS REALES</span>
+        <h2>Lo que dicen nuestros huéspedes</h2>
+      </div>
+      <div id="opiniones-inicio" class="grilla-opiniones-inicio"></div>
+      <a class="enlace-inicio" href="#opiniones">Leer más opiniones →</a>
+    </section>
+
+    <section class="resumen-contacto-inicio">
+      <div>
+        <span>¿TENÉS ALGUNA CONSULTA?</span>
+        <h2>Estamos para ayudarte</h2>
+        <p>Comunicate con nosotros o conocé cómo llegar al hotel.</p>
+      </div>
+      <a href="#contacto">Ver contacto y ubicación</a>
+    </section>
+  </main>
+
+  <main id="vista-reserva" class="vista-aplicacion" hidden>
+    <section class="encabezado-pagina">
+      <div>
+        <h1>Nueva reserva</h1>
+        <p>Completa el formulario para enviar tu solicitud de reserva.</p>
+      </div>
+      <div id="alerta-formulario" class="alerta-formulario" role="alert" hidden>
+        ⓘ Por favor, corrige los errores en el formulario para continuar.
+      </div>
+    </section>
+
+    <form id="formulario-reserva" class="tarjeta-reserva" novalidate>
+      <fieldset>
+        <legend>
+          <span class="icono-seccion">
+            <img src="img/icono-detalle-huesped.svg" alt="">
+          </span>
+          Datos personales
+        </legend>
+        <div class="grilla tres-columnas">
+          <label>Nombre completo <b>*</b>
+            <span class="contenedor-entrada">
+              <i>♙</i>
+              <input id="txtNombreReserva" name="nombre" type="text" placeholder="Juan Pérez">
+            </span>
+            <small class="error-campo"></small>
+          </label>
+          <label>Correo electrónico <b>*</b>
+            <span class="contenedor-entrada">
+              <i>✉</i>
+              <input id="txtCorreoReserva" name="correo" type="email" placeholder="juan.perez@ejemplo.com">
+            </span>
+            <small class="error-campo"></small>
+          </label>
+          <label>Celular <b>*</b>
+            <span class="contenedor-entrada">
+              <i>⌕</i>
+              <input id="txtCelularReserva" name="celular" type="tel" placeholder="09* *** ***">
+            </span>
+            <small class="error-campo"></small>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <span class="icono-seccion">
+            <img src="img/icono-detalle-reserva.svg" alt="">
+          </span>
+          Fechas de estancia
+        </legend>
+        <div class="grilla dos-columnas">
+          <label>Fecha de ingreso <b>*</b>
+            <input id="txtFechaIngreso" name="fechaIngreso" type="date">
+            <small class="error-campo"></small>
+          </label>
+          <label>Fecha de salida <b>*</b>
+            <input id="txtFechaSalida" name="fechaSalida" type="date">
+            <small class="error-campo"></small>
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>
+          <span class="icono-seccion">
+            <img src="img/icono-habitacion-basica.svg" alt="">
+          </span>
+          Detalles de la reserva
+        </legend>
+        <div class="grilla dos-columnas">
+          <label>Tipo de habitación <b>*</b>
+            <select id="slcHabitacion" name="habitacion">
+              <option value="">Seleccionar tipo de habitación</option>
+              <option>Básica</option>
+              <option>Premium</option>
+              <option>Luxury</option>
+              <option>Ejecutiva</option>
+            </select>
+            <small class="error-campo"></small>
+          </label>
+          <label>Cantidad de huéspedes <b>*</b>
+            <span class="contenedor-entrada">
+              <i>♙</i>
+              <input id="nroCantidadHuespedes" name="cantidadHuespedes" type="number" min="1" placeholder="0">
+            </span>
+            <small class="error-campo"></small>
+          </label>
+        </div>
+        <div class="opciones-habitacion" aria-label="Tipos de habitación">
+          <label>
+            <input type="radio" name="tarjetaHabitacion" value="Básica">
+            <span><img src="img/icono-habitacion-basica.svg" alt=""></span>
+            <strong>
+              Básica
+              <small>Comodidad esencial para tu estadía.</small>
+            </strong>
+          </label>
+          <label>
+            <input type="radio" name="tarjetaHabitacion" value="Premium">
+            <span><img src="img/icono-habitacion-premium.svg" alt=""></span>
+            <strong>
+              Premium
+              <small>Más espacio y servicios para tu confort.</small>
+            </strong>
+          </label>
+          <label>
+            <input type="radio" name="tarjetaHabitacion" value="Luxury">
+            <span><img src="img/icono-habitacion-luxury.svg" alt=""></span>
+            <strong>
+              Luxury
+              <small>Experiencia superior con servicios exclusivos.</small>
+            </strong>
+          </label>
+          <label>
+            <input type="radio" name="tarjetaHabitacion" value="Ejecutiva">
+            <span><img src="img/icono-habitacion-ejecutiva.svg" alt=""></span>
+            <strong>
+              Ejecutiva
+              <small>Ideal para viajes de negocios.</small>
+            </strong>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="grilla-inferior">
+        <fieldset>
+          <legend>
+            <span class="icono-seccion">
+              <img src="img/icono-seccion-servicios.svg" alt="">
+            </span>
+            Servicios opcionales
+          </legend>
+          <p class="ayuda-campo">Selecciona los servicios adicionales que deseas.</p>
+          <div class="servicios">
+            <label>
+              <input type="checkbox" name="servicios" value="Desayuno">
+              <img class="icono-servicio" src="img/icono-desayuno.svg" alt="">
+              Desayuno
+            </label>
+            <label>
+              <input type="checkbox" name="servicios" value="Piscina">
+              <img class="icono-servicio" src="img/icono-piscina.svg" alt="">
+              Piscina
+            </label>
+            <label>
+              <input type="checkbox" name="servicios" value="Estacionamiento">
+              <img class="icono-servicio" src="img/icono-estacionamiento.svg" alt="">
+              Estacionamiento
+            </label>
+            <label>
+              <input type="checkbox" name="servicios" value="Servicio a la habitación">
+              <img class="icono-servicio" src="img/icono-servicio-habitacion.svg" alt="">
+              Servicio a la habitación
+            </label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>
+            <span class="icono-seccion">
+              <img src="img/icono-seccion-comentarios.svg" alt="">
+            </span>
+            Comentarios o solicitudes especiales <em>(opcional)</em>
+          </legend>
+          <p class="ayuda-campo">Cuéntanos si tienes alguna solicitud especial.</p>
+          <textarea id="txtComentariosReserva" name="comentarios" placeholder="Ej.: Habitación con vista al mar, cama adicional, etc."></textarea>
+        </fieldset>
+      </div>
+
+      <div class="acciones-formulario">
+        <button class="secundario" type="reset">⌁ Limpiar formulario</button>
+        <button class="primario" type="submit">➤ Enviar solicitud</button>
+      </div>
+      <p id="mensaje-exito" class="mensaje-exito" hidden>Reserva confirmada correctamente.</p>
+    </form>
+  </main>
+
+  <main id="vista-habitaciones" class="habitaciones-principal vista-aplicacion" hidden>
+    <section class="encabezado-habitaciones">
+      <span>—　<img src="img/logo-gaviota.png" alt="">　—</span>
+      <h1>Nuestras habitaciones</h1>
+      <p>Descansá con el confort que merecés. Contamos con habitaciones diseñadas para cada tipo de huésped y necesidad.</p>
+    </section>
+
+    <section class="grilla-habitaciones">
+      <article class="tarjeta-habitacion">
+        <img src="img/habitacion-basica.png" alt="Habitación Básica">
+        <div class="contenido-tarjeta-habitacion">
+          <h2>Básica</h2>
+          <strong>Habitación estándar</strong>
+          <p>Espacio funcional y acogedor, ideal para descansar con todo lo esencial.</p>
+          <ul>
+            <li><img src="img/icono-usuario.svg" alt=""> Capacidad máxima: 3 huéspedes</li>
+            <li><img src="img/icono-precio.svg" alt=""> USD 100 por noche</li>
+          </ul>
+          <h3>Comodidades principales</h3>
+          <div class="comodidades">
+            <span><img src="img/icono-wifi.svg" alt="">Wi-Fi</span>
+            <span><img src="img/icono-aire.svg" alt="">Aire acondicionado</span>
+            <span><img src="img/icono-television.svg" alt="">TV</span>
+            <span><img src="img/icono-bano.svg" alt="">Baño privado</span>
+          </div>
+          <button class="boton-reservar-habitacion" data-habitacion="Básica" type="button">
+            <img src="img/icono-calendario.svg" alt="">
+            Reservar esta habitación
+          </button>
+        </div>
+      </article>
+      <article class="tarjeta-habitacion">
+        <img src="img/habitacion-premium.png" alt="Habitación Premium">
+        <div class="contenido-tarjeta-habitacion">
+          <h2>Premium</h2>
+          <strong>Habitación superior</strong>
+          <p>Mayor espacio y confort con detalles que marcan la diferencia.</p>
+          <ul>
+            <li><img src="img/icono-usuario.svg" alt=""> Capacidad máxima: 3 huéspedes</li>
+            <li><img src="img/icono-precio.svg" alt=""> USD 110 por noche</li>
+          </ul>
+          <h3>Comodidades principales</h3>
+          <div class="comodidades">
+            <span><img src="img/icono-wifi.svg" alt="">Wi-Fi</span>
+            <span><img src="img/icono-aire.svg" alt="">Aire acondicionado</span>
+            <span><img src="img/icono-television.svg" alt="">TV</span>
+            <span><img src="img/icono-bano.svg" alt="">Baño privado</span>
+          </div>
+          <button class="boton-reservar-habitacion" data-habitacion="Premium" type="button">
+            <img src="img/icono-calendario.svg" alt="">
+            Reservar esta habitación
+          </button>
+        </div>
+      </article>
+      <article class="tarjeta-habitacion">
+        <img src="img/habitacion-luxury.png" alt="Habitación Luxury">
+        <div class="contenido-tarjeta-habitacion">
+          <h2>Luxury</h2>
+          <strong>Habitación deluxe</strong>
+          <p>Lujo y confort en cada detalle para una experiencia inolvidable.</p>
+          <ul>
+            <li><img src="img/icono-usuario.svg" alt=""> Capacidad máxima: 3 huéspedes</li>
+            <li><img src="img/icono-precio.svg" alt=""> USD 121 por noche</li>
+          </ul>
+          <h3>Comodidades principales</h3>
+          <div class="comodidades">
+            <span><img src="img/icono-wifi.svg" alt="">Wi-Fi</span>
+            <span><img src="img/icono-aire.svg" alt="">Aire acondicionado</span>
+            <span><img src="img/icono-television.svg" alt="">TV</span>
+            <span><img src="img/icono-minibar.svg" alt="">Minibar</span>
+            <span><img src="img/icono-bano.svg" alt="">Baño privado</span>
+          </div>
+          <button class="boton-reservar-habitacion" data-habitacion="Luxury" type="button">
+            <img src="img/icono-calendario.svg" alt="">
+            Reservar esta habitación
+          </button>
+        </div>
+      </article>
+      <article class="tarjeta-habitacion">
+        <img src="img/habitacion-ejecutiva.png" alt="Habitación Ejecutiva">
+        <div class="contenido-tarjeta-habitacion">
+          <h2>Ejecutiva</h2>
+          <strong>Habitación ejecutiva</strong>
+          <p>Ideal para viajes de negocios o estadías prolongadas con máximo confort.</p>
+          <ul>
+            <li><img src="img/icono-usuario.svg" alt=""> Capacidad máxima: 3 huéspedes</li>
+            <li><img src="img/icono-precio.svg" alt=""> USD 133 por noche</li>
+          </ul>
+          <h3>Comodidades principales</h3>
+          <div class="comodidades">
+            <span><img src="img/icono-wifi.svg" alt="">Wi-Fi</span>
+            <span><img src="img/icono-aire.svg" alt="">Aire acondicionado</span>
+            <span><img src="img/icono-television.svg" alt="">TV</span>
+            <span><img src="img/icono-minibar.svg" alt="">Minibar</span>
+            <span><img src="img/icono-escritorio.svg" alt="">Escritorio</span>
+          </div>
+          <button class="boton-reservar-habitacion" data-habitacion="Ejecutiva" type="button">
+            <img src="img/icono-calendario.svg" alt="">
+            Reservar esta habitación
+          </button>
+        </div>
+      </article>
+    </section>
+    <p class="nota-habitaciones">ⓘ Precios por noche en dólares estadounidenses. Impuestos incluidos.</p>
+  </main>
+
+  <main id="vista-galeria" class="galeria-principal vista-aplicacion" hidden>
+    <section class="encabezado-galeria">
+      <span class="texto-superior">CONOCÉ LAS GAVIOTAS</span>
+      <h1>Galería del hotel</h1>
+      <p>Descubrí cada espacio pensado para que disfrutes una estadía inolvidable frente al mar.</p>
+    </section>
+
+    <section class="galeria-hotel" aria-label="Imágenes del Hotel Las Gaviotas">
+      <figure class="tarjeta-galeria">
+        <img src="img/galeria-habitacion.png" alt="Habitación del hotel con vista al mar" loading="lazy">
+        <figcaption>Habitaciones</figcaption>
+      </figure>
+      <figure class="tarjeta-galeria">
+        <img src="img/galeria-piscina.png" alt="Piscina exterior con vista al océano" loading="lazy">
+        <figcaption>Piscina</figcaption>
+      </figure>
+      <figure class="tarjeta-galeria">
+        <img src="img/galeria-recepcion.png" alt="Recepción moderna del hotel" loading="lazy">
+        <figcaption>Recepción</figcaption>
+      </figure>
+      <figure class="tarjeta-galeria">
+        <img src="img/galeria-espacios-comunes.png" alt="Espacios comunes con vista al mar" loading="lazy">
+        <figcaption>Espacios comunes</figcaption>
+      </figure>
+      <figure class="tarjeta-galeria">
+        <img src="img/galeria-restaurante.png" alt="Restaurante del hotel preparado para el desayuno" loading="lazy">
+        <figcaption>Restaurante</figcaption>
+      </figure>
+      <figure class="tarjeta-galeria">
+        <img src="img/galeria-terraza.png" alt="Terraza del hotel durante el atardecer" loading="lazy">
+        <figcaption>Terraza con vista al mar</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <main id="vista-servicios" class="servicios-principal vista-aplicacion" hidden>
+    <section class="encabezado-servicios">
+      <span class="texto-superior">PENSADOS PARA TU CONFORT</span>
+      <h1>Servicios y comodidades</h1>
+      <p>Todo lo necesario para disfrutar una estadía cómoda, tranquila y sin preocupaciones.</p>
+    </section>
+
+    <section class="grilla-servicios" aria-label="Servicios y comodidades del hotel">
+      <article class="tarjeta-servicio">
+        <span class="icono-tarjeta-servicio">
+          <img src="img/icono-desayuno.svg" alt="">
+        </span>
+        <h2>Desayuno</h2>
+        <p>Comenzá el día con una selección completa de opciones frescas y variadas.</p>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <span class="icono-tarjeta-servicio">
+          <img src="img/icono-piscina.svg" alt="">
+        </span>
+        <h2>Piscina</h2>
+        <p>Disfrutá nuestra piscina con vista al mar en un ambiente tranquilo y cuidado.</p>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <span class="icono-tarjeta-servicio">
+          <img src="img/icono-estacionamiento.svg" alt="">
+        </span>
+        <h2>Estacionamiento</h2>
+        <p>Espacio privado y seguro para huéspedes durante toda su estadía.</p>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <span class="icono-tarjeta-servicio">
+          <img src="img/icono-servicio-habitacion.svg" alt="">
+        </span>
+        <h2>Servicio a la habitación</h2>
+        <p>Solicitá atención directamente en tu habitación para mayor comodidad.</p>
+      </article>
+
+      <article class="tarjeta-servicio">
+        <span class="icono-tarjeta-servicio">
+          <img src="img/icono-wifi.svg" alt="">
+        </span>
+        <h2>Wi-Fi</h2>
+        <p>Conexión inalámbrica disponible en las habitaciones y espacios comunes.</p>
+      </article>
+    </section>
+  </main>
+
+  <main id="vista-contacto" class="contacto-principal vista-aplicacion" hidden>
+    <section class="encabezado-contacto">
+      <span class="texto-superior">ESTAMOS PARA AYUDARTE</span>
+      <h1>Contacto y ubicación</h1>
+      <p>Encontrá toda la información necesaria para comunicarte con nosotros o visitarnos.</p>
+    </section>
+
+    <section class="distribucion-contacto">
+      <div class="informacion-contacto">
+        <article class="tarjeta-contacto">
+          <span class="icono-contacto">
+            <img src="img/icono-ubicacion.svg" alt="">
+          </span>
+          <div>
+            <h2>Dirección</h2>
+            <p>Rambla Lorenzo Batlle Pacheco<br>Punta del Este, Uruguay</p>
+          </div>
+        </article>
+
+        <article class="tarjeta-contacto">
+          <span class="icono-contacto">
+            <img src="img/icono-correo.svg" alt="">
+          </span>
+          <div>
+            <h2>Correo electrónico</h2>
+            <a href="mailto:contacto@lasgaviotas.com">contacto@lasgaviotas.com</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-contacto">
+          <span class="icono-contacto">
+            <img src="img/icono-telefono.svg" alt="">
+          </span>
+          <div>
+            <h2>Teléfono</h2>
+            <a href="tel:+59899123456">099 123 456</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-contacto">
+          <span class="icono-contacto">
+            <img src="img/icono-recepcion.svg" alt="">
+          </span>
+          <div>
+            <h2>Horario de recepción</h2>
+            <p>Atención disponible las 24 horas.</p>
+          </div>
+        </article>
+
+        <article class="tarjeta-contacto tarjeta-redes-contacto">
+          <span class="icono-contacto">
+            <img src="img/icono-atencion.svg" alt="">
+          </span>
+          <div>
+            <h2>Redes sociales</h2>
+            <div class="redes-contacto">
+              <a href="#" aria-label="Facebook">
+                <img src="img/icono-facebook.svg" alt="">
+              </a>
+              <a href="#" aria-label="Instagram">
+                <img src="img/icono-instagram.svg" alt="">
+              </a>
+              <a href="#" aria-label="X">
+                <img src="img/icono-x.svg" alt="">
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="mapa-contacto">
+        <div class="encabezado-mapa-contacto">
+          <div>
+            <h2>Ubicación del hotel</h2>
+            <p>Rambla Lorenzo Batlle Pacheco, Punta del Este, Uruguay</p>
+          </div>
+        </div>
+
+        <div class="marco-mapa-contacto">
+          <iframe
+            src="https://www.google.com/maps?q=Rambla+Lorenzo+Batlle+Pacheco,+Punta+del+Este,+Uruguay&z=12&output=embed"
+            title="Ubicación del Hotel Las Gaviotas"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <main id="vista-panel" class="administracion-principal vista-aplicacion" hidden>
+    <section class="encabezado-pagina encabezado-administracion">
+      <div>
+        <h1>Panel de reservas</h1>
+        <p>Gestioná y consultá todas las solicitudes de reserva realizadas por los huéspedes.</p>
+      </div>
+      <label class="caja-busqueda" aria-label="Buscar reservas">
+        <span>⌕</span>
+        <input id="buscador-reservas" type="search" placeholder="Buscar por nombre o correo electrónico...">
+      </label>
+    </section>
+
+    <section class="tarjeta-tabla">
+      <div class="desplazamiento-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Estado</th>
+              <th>Huésped</th>
+              <th>Ingreso</th>
+              <th>Salida</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-reservas"></tbody>
+        </table>
+      </div>
+      <div class="pie-tabla">
+        <p id="contador-reservas"></p>
+        <div id="paginacion-reservas" class="paginacion" aria-label="Páginas de reservas"></div>
+      </div>
+    </section>
+  </main>
+
+  <main id="vista-opiniones" class="opiniones-principal vista-aplicacion" hidden>
+    <section class="encabezado-opiniones">
+      <span class="texto-superior">EXPERIENCIAS LAS GAVIOTAS</span>
+      <h1>Lo que dicen nuestros huéspedes</h1>
+      <p>Cada estadía deja una historia. Conocé las experiencias de quienes ya eligieron descansar junto al mar.</p>
+    </section>
+
+    <section class="carrusel-opiniones" aria-label="Opiniones de huéspedes">
+      <button id="boton-opiniones-anterior" class="flecha-carrusel anterior" type="button" aria-label="Opiniones anteriores">‹</button>
+
+      <div id="contenedor-opiniones" class="paginas-opiniones"></div>
+
+      <button id="boton-opiniones-siguiente" class="flecha-carrusel siguiente" type="button" aria-label="Opiniones siguientes">›</button>
+      <div id="puntos-opiniones" class="puntos-carrusel" aria-label="Páginas de opiniones"></div>
+    </section>
+
+    <section class="resumen-opiniones">
+      <div>
+        <strong>4.9</strong>
+        <span class="estrellas">★★★★★</span>
+        <small>Calificación promedio</small>
+      </div>
+      <div>
+        <strong>98%</strong>
+        <small>de nuestros huéspedes nos recomendaría</small>
+      </div>
+      <a id="boton-reservar-opiniones" href="#reserva">
+        Reservar mi estadía <span>→</span>
+      </a>
+    </section>
+  </main>
+
+  <main id="vista-confirmacion" class="confirmacion-principal vista-aplicacion" hidden>
+    <section class="tarjeta-confirmacion">
+      <div class="simbolo-confirmacion" aria-hidden="true">✓</div>
+      <h1>Reserva confirmada correctamente</h1>
+
+      <dl class="detalles-confirmacion">
+        <div>
+          <dt><span><img src="img/icono-detalle-huesped.svg" alt=""></span> Nombre completo:</dt>
+          <dd id="confirmacion-nombre"></dd>
+        </div>
+        <div>
+          <dt><span><img src="img/icono-correo.svg" alt=""></span> Correo electrónico:</dt>
+          <dd id="confirmacion-correo"></dd>
+        </div>
+        <div>
+          <dt><span><img src="img/icono-telefono.svg" alt=""></span> Celular:</dt>
+          <dd id="confirmacion-celular"></dd>
+        </div>
+        <div>
+          <dt><span><img src="img/icono-detalle-reserva.svg" alt=""></span> Fecha de ingreso:</dt>
+          <dd id="confirmacion-ingreso"></dd>
+        </div>
+        <div>
+          <dt><span><img src="img/icono-detalle-reserva.svg" alt=""></span> Fecha de salida:</dt>
+          <dd id="confirmacion-salida"></dd>
+        </div>
+        <div>
+          <dt><span><img src="img/icono-habitacion.svg" alt=""></span> Tipo de habitación:</dt>
+          <dd id="confirmacion-habitacion"></dd>
+        </div>
+        <div>
+          <dt><span><img src="img/icono-detalle-huesped.svg" alt=""></span> Cantidad de huéspedes:</dt>
+          <dd id="confirmacion-huespedes"></dd>
+        </div>
+        <div>
+          <dt><span><img src="img/icono-seccion-servicios.svg" alt=""></span> Servicios opcionales:</dt>
+          <dd id="confirmacion-servicios"></dd>
+        </div>
+        <div>
+          <dt><span><img src="img/icono-seccion-comentarios.svg" alt=""></span> Comentarios o solicitudes especiales:</dt>
+          <dd id="confirmacion-comentarios"></dd>
+        </div>
+      </dl>
+
+      <p class="aviso-confirmacion">
+        Tu reserva quedó confirmada y registrada correctamente.
+      </p>
+
+      <a class="volver-inicio-confirmacion" href="#reserva">
+        <img src="img/icono-nav-inicio.svg" alt="">
+        <span>Volver al inicio</span>
+      </a>
+    </section>
+  </main>
+
+  <main id="vista-detalle-reserva" class="detalle-administracion-principal vista-aplicacion" hidden>
+    <a class="volver-panel" href="#panel">← Volver al panel</a>
+    <h1>Detalle de reserva</h1>
+    <div class="resumen-detalle">
+      <span>Estado actual:</span>
+      <strong id="detalle-estado-actual" class="estado confirmada"></strong>
+      <span class="divisor-detalle"></span>
+      <span>N.º Reserva:</span>
+      <strong id="detalle-numero-reserva"></strong>
+    </div>
+
+    <div class="grilla-detalle-administracion">
+      <section class="caja-detalle">
+        <h2>
+          <span><img src="img/icono-detalle-huesped.svg" alt=""></span>
+          Datos del huésped
+        </h2>
+        <dl>
+          <div>
+            <dt>Nombre completo:</dt>
+            <dd id="detalle-nombre"></dd>
+          </div>
+          <div>
+            <dt>Correo electrónico:</dt>
+            <dd id="detalle-correo"></dd>
+          </div>
+          <div>
+            <dt>Teléfono:</dt>
+            <dd id="detalle-celular"></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="caja-detalle">
+        <h2>
+          <span><img src="img/icono-detalle-reserva.svg" alt=""></span>
+          Detalles de la reserva
+        </h2>
+        <dl>
+          <div>
+            <dt>Habitación:</dt>
+            <dd id="detalle-habitacion"></dd>
+          </div>
+          <div>
+            <dt>Capacidad:</dt>
+            <dd id="detalle-huespedes"></dd>
+          </div>
+          <div>
+            <dt>Fecha de ingreso:</dt>
+            <dd id="detalle-ingreso"></dd>
+          </div>
+          <div>
+            <dt>Fecha de salida:</dt>
+            <dd id="detalle-salida"></dd>
+          </div>
+          <div>
+            <dt>Noches:</dt>
+            <dd id="detalle-noches"></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="caja-detalle caja-detalle-completa">
+        <h2>
+          <span><img src="img/icono-detalle-informacion.svg" alt=""></span>
+          Información adicional
+        </h2>
+        <p><strong>Servicios:</strong> <span id="detalle-servicios"></span></p>
+        <p><strong>Comentarios:</strong></p>
+        <p id="detalle-comentarios"></p>
+      </section>
+
+    </div>
+
+    <div class="acciones-detalle">
+      <button id="boton-cancelar-reserva" class="cancelar-reserva" type="button">
+        <img src="img/icono-cancelar-reserva.svg" alt="">
+        Cancelar reserva
+      </button>
+    </div>
+  </main>
+
+  <dialog id="dialogo-confirmar-cancelacion" class="dialogo-cancelacion">
+    <div class="simbolo-dialogo simbolo-peligro">
+      <img src="img/icono-cancelar-reserva.svg" alt="">
+    </div>
+    <h2>¿Está seguro que desea<br>cancelar esta reserva?</h2>
+    <p>Esta acción eliminará la reserva del listado.</p>
+    <div class="acciones-dialogo">
+      <button id="boton-volver-cancelacion" class="secundario" type="button">Volver</button>
+      <button id="boton-confirmar-cancelacion" class="boton-peligro" type="button">Confirmar</button>
+    </div>
+  </dialog>
+
+  <dialog id="dialogo-cancelacion-exitosa" class="dialogo-cancelacion">
+    <div class="simbolo-dialogo simbolo-exito">
+      <img src="img/icono-cancelacion-exitosa.svg" alt="">
+    </div>
+    <h2>Reserva cancelada<br>con éxito</h2>
+    <p>La reserva ha sido eliminada correctamente.</p>
+    <button id="boton-aceptar-cancelacion" class="boton-aceptar" type="button">Aceptar</button>
+  </dialog>
+
+  <footer>
+    <div id="contenido-pie" class="grilla-pie tres-columnas">
+      <div class="marca-pie">
+        <strong>
+          <img class="logo-gaviota logo-gaviota-pie" src="img/logo-gaviota.png" alt="">
+          <span>LAS GAVIOTAS <small>HOTEL</small></span>
+        </strong>
+        <p>
+          Tu lugar de descanso frente al mar.<br>
+          Confort, naturaleza y la mejor atención, todo el año.
+        </p>
+      </div>
+
+      <div id="enlaces-rapidos-pie" hidden></div>
+
+      <div class="contacto-pie">
+        <h2>Contacto</h2>
+        <p>
+          <img src="img/icono-correo-footer.svg" alt="">
+          <span>contacto@lasgaviotas.com</span>
+        </p>
+        <p>
+          <img src="img/icono-telefono-footer.svg" alt="">
+          <span>099 123 456</span>
+        </p>
+        <p>
+          <img src="img/icono-ubicacion.svg" alt="">
+          <span>Rambla Lorenzo Batlle Pacheco,<br>Punta del Este, Uruguay</span>
+        </p>
+        <p>
+          <img src="img/icono-recepcion.svg" alt="">
+          <span>Recepción 24 horas</span>
+        </p>
+      </div>
+
+      <div>
+        <h2>Seguinos</h2>
+        <div class="redes-sociales">
+          <a href="#" aria-label="Facebook">
+            <img src="img/icono-facebook.svg" alt="">
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img src="img/icono-instagram.svg" alt="">
+          </a>
+          <a href="#" aria-label="X">
+            <img src="img/icono-x.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+    <p class="derechos-autor">© 2026 Hotel Las Gaviotas. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="src/core/clases.js"></script>
+  <script src="src/core/reservas.js"></script>
+  <script src="src/core/usuarios.js"></script>
+  <script src="src/reservas.js"></script>
+  <script src="src/listadoReservas.js"></script>
+  <script src="src/opiniones.js"></script>
+  <script src="src/confirmacionReserva.js"></script>
+  <script src="src/inicioSesion.js"></script>
+  <script src="src/registro.js"></script>
+  <script src="src/habitaciones.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
