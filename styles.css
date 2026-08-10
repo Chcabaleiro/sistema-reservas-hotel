@@ -3779,3 +3779,15 @@ td,dd,.tarjeta-opinion p,.tarjeta-habitacion p {
     min-height:210px
   }
 }
+
+/* Encabezado fijo de la página de inicio */
+.barra-superior.barra-inicio-fija {
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid #ffffff24;
+  background:linear-gradient(100deg,#00152fe8,#001c48e3);
+  box-shadow:0 10px 30px #00152f24;
+  -webkit-backdrop-filter:blur(14px) saturate(135%);
+  backdrop-filter:blur(14px) saturate(135%)
+}

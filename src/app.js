@@ -209,6 +209,8 @@ function mostrarVista() {
   let haySesion = usuarioActivo !== null;
   let esAdministradora = haySesion && sistemaUsuarios.puedeVerListado(usuarioActivo);
 
+  BARRA_PRINCIPAL.classList.toggle("barra-inicio-fija", ruta === "#inicio");
+
   if (haySesion && (ruta === "#login" || ruta === "#registro")) {
     location.hash = esAdministradora ? "#panel" : "#inicio";
     return;
@@ -281,7 +283,14 @@ function mostrarVista() {
   }
 }
 
+function volverArribaDesdeLogo(pEvento) {
+  pEvento.preventDefault();
+  location.hash = "#inicio";
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function iniciarNavegacion() {
+  document.querySelector(".marca-hotel").addEventListener("click", volverArribaDesdeLogo);
   document.querySelector("#boton-cerrar-sesion").addEventListener("click", cerrarSesion);
   window.addEventListener("hashchange", mostrarVista);
   mostrarVista();
