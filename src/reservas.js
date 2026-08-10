@@ -24,7 +24,6 @@ function configurarLimitesFechas() {
   let fechaActual = obtenerFechaActualParaInput();
 
   campoFechaIngreso.min = fechaActual;
-  campoFechaIngreso.title = "No se pueden seleccionar fechas anteriores a hoy.";
 }
 
 function leerDatosFormulario() {
