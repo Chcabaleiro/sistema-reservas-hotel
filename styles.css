@@ -233,6 +233,20 @@ input:focus,select:focus,textarea:focus {
   box-shadow:0 0 0 2px #315d9620
 }
 
+input[type="date"] {
+  cursor:pointer
+}
+
+input[type="date"]:out-of-range {
+  border-color:var(--danger);
+  color:var(--danger);
+  cursor:not-allowed
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor:pointer
+}
+
 .contenedor-entrada {
   position:relative;
   display:block

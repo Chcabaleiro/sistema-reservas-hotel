@@ -1,5 +1,32 @@
 const selectoresCamposFormulario = { nombre: "#txtNombreReserva", correo: "#txtCorreoReserva", celular: "#txtCelularReserva", fechaIngreso: "#txtFechaIngreso", fechaSalida: "#txtFechaSalida", habitacion: "#slcHabitacion", cantidadHuespedes: "#nroCantidadHuespedes", comentarios: "#txtComentariosReserva" };
 
+function formatearFechaParaInput(pFecha) {
+  let anio = pFecha.getFullYear();
+  let mes = pFecha.getMonth() + 1;
+  let dia = pFecha.getDate();
+
+  if (mes < 10) {
+    mes = "0" + mes;
+  }
+  if (dia < 10) {
+    dia = "0" + dia;
+  }
+
+  return anio + "-" + mes + "-" + dia;
+}
+
+function obtenerFechaActualParaInput() {
+  return formatearFechaParaInput(new Date());
+}
+
+function configurarLimitesFechas() {
+  let campoFechaIngreso = document.querySelector("#txtFechaIngreso");
+  let fechaActual = obtenerFechaActualParaInput();
+
+  campoFechaIngreso.min = fechaActual;
+  campoFechaIngreso.title = "No se pueden seleccionar fechas anteriores a hoy.";
+}
+
 function leerDatosFormulario() {
   let nombre = document.querySelector("#txtNombreReserva").value;
   let correo = document.querySelector("#txtCorreoReserva").value;
@@ -83,6 +110,7 @@ function iniciarFormularioReservas(pSistemaReservas,pGuardarReservas,pMostrarCon
 
   document.querySelector("#formulario-reserva").addEventListener("submit", reservar);
   document.querySelector("#formulario-reserva").addEventListener("reset", limpiarFormulario);
+  configurarLimitesFechas();
 
   function alternarMenu() {
     barraSuperior.classList.toggle("menu-abierto");
@@ -119,6 +147,7 @@ function iniciarFormularioReservas(pSistemaReservas,pGuardarReservas,pMostrarCon
       alertaFormulario.hidden = true;
       mensajeExito.hidden = true;
       limpiarErrores();
+      configurarLimitesFechas();
     }
 
     setTimeout(finalizarLimpieza);

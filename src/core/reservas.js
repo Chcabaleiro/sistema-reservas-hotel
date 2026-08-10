@@ -21,6 +21,19 @@ class SistemaReservas {
     let capacidadHabitacion = this.obtenerCapacidadHabitacion(pDatos.habitacion);
     let correo = pDatos.correo.trim();
     let celularSinEspacios = pDatos.celular.replaceAll(" ", "");
+    let fechaActual = new Date();
+    let anioActual = fechaActual.getFullYear();
+    let mesActual = fechaActual.getMonth() + 1;
+    let diaActual = fechaActual.getDate();
+
+    if (mesActual < 10) {
+      mesActual = "0" + mesActual;
+    }
+    if (diaActual < 10) {
+      diaActual = "0" + diaActual;
+    }
+
+    let fechaHoy = anioActual + "-" + mesActual + "-" + diaActual;
 
     if (pDatos.nombre.trim() === "") {
       errores.nombre = "El nombre completo es obligatorio.";
@@ -36,6 +49,10 @@ class SistemaReservas {
     }
     if (pDatos.fechaIngreso === "") {
       errores.fechaIngreso = "Selecciona una fecha de ingreso.";
+      cantidadErrores++;
+    }
+    if (pDatos.fechaIngreso !== "" && pDatos.fechaIngreso < fechaHoy) {
+      errores.fechaIngreso = "La fecha de ingreso no puede ser anterior a hoy.";
       cantidadErrores++;
     }
     if (pDatos.fechaSalida === "") {
@@ -157,4 +174,3 @@ if (typeof module !== "undefined") {
     SistemaReservas
   };
 }
-
