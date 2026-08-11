@@ -207,8 +207,8 @@ test("acepta una reserva con datos validos", function() {
     nombre: "Juan Perez",
     correo: "juan@correo.com",
     celular: "099123456",
-    fechaIngreso: "2026-08-10",
-    fechaSalida: "2026-08-13",
+    fechaIngreso: "2099-08-10",
+    fechaSalida: "2099-08-13",
     habitacion: "Premium",
     cantidadHuespedes: 2
   };
